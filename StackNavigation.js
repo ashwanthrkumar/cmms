@@ -1,5 +1,5 @@
 //import liraries
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -25,7 +25,7 @@ const StackNavigation = () => {
                 <Tab.Screen name="Home" component={HomeScreen}
                     options={{
                         tabBarLabel: "Home", headerShown: false, tabBarIcon: ({ focused }) => focused ? (
-                            <Ionicons name="home" size={24} color="black" />
+                            <Ionicons name="home" size={24} color="#3162BF" />
                         ) : (
                             <Ionicons name="home-outline" size={24} color="black" />
                         ),
@@ -33,7 +33,7 @@ const StackNavigation = () => {
                 <Tab.Screen name="Orders" component={Orders}
                     options={{
                         tabBarLabel: "Orders", headerShown: false, tabBarIcon: ({ focused }) => focused ? (
-                            <FontAwesome name="inbox" size={24} color="black" />
+                            <FontAwesome name="inbox" size={24} color="#3162BF" />
                         ) : (
                             <Feather name="inbox" size={24} color="black" />
                         ),
@@ -41,7 +41,7 @@ const StackNavigation = () => {
                 <Tab.Screen name="Payments" component={Payments}
                     options={{
                         tabBarLabel: "Payments", headerShown: false, tabBarIcon: ({ focused }) => focused ? (
-                            <FontAwesome5 name="money-bill" size={24} color="black" />
+                            <FontAwesome5 name="money-bill" size={24} color="#3162BF" />
                         ) : (
                             <FontAwesome5 name="money-bill-alt" size={24} color="black" />
                         ),
@@ -49,7 +49,7 @@ const StackNavigation = () => {
                 <Tab.Screen name="Track" component={Track}
                     options={{
                         tabBarLabel: "Track", headerShown: false, tabBarIcon: ({ focused }) => focused ? (
-                            <MaterialCommunityIcons name="map-marker-account" size={24} color="black" />
+                            <MaterialCommunityIcons name="map-marker-account" size={24} color="#3162BF" />
                         ) : (
                             <MaterialCommunityIcons name="map-marker-account-outline" size={24} color="black" />
                         ),
@@ -57,7 +57,7 @@ const StackNavigation = () => {
                 <Tab.Screen name="Stats" component={Stats}
                     options={{
                         tabBarLabel: "Stats", headerShown: false, tabBarIcon: ({ focused }) => focused ? (
-                            <Ionicons name="stats-chart" size={24} color="black" />
+                            <Ionicons name="stats-chart" size={24} color="#3162BF" />
                         ) : (
                             <Ionicons name="ios-stats-chart-outline" size={24} color="black" />
                         ),
@@ -69,7 +69,7 @@ const StackNavigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Main" component={BottomTab} />
+                <Stack.Screen name="Hello" component={BottomTab} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
