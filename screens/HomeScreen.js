@@ -101,11 +101,11 @@ const HomeScreen = () => {
             <Text
                 style={[styles.no11348th, styles.no11348thTypo]}
             >{`No. 11/34, 8th Cross, Manjunathnagar,
-    Magadi Road, Bangalore- 23`}</Text>
+        Magadi Road, Bangalore- 23`}</Text>
             <Text
                 style={[styles.no11348th1, styles.no11348thTypo]}
             >{`No. 11/34, 8th Cross, Manjunathnagar,
-    Magadi Road, Bangalore- 23`}</Text>
+        Magadi Road, Bangalore- 23`}</Text>
             <Text style={[styles.type, styles.timeTypo]}>Type</Text>
             <Text style={[styles.type1, styles.type1Position]}>Type</Text>
             <Text style={[styles.request, styles.timeTypo]}>Request</Text>
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     },
     homeLayout: {
         height: 199,
-        width: 292,
+        width: 325,
         backgroundColor: Color.colorRoyalblue,
         borderRadius: Border.br_smi,
         left: "50%",
@@ -378,13 +378,13 @@ const styles = StyleSheet.create({
     },
     homeChildPosition1: {
         width: 254,
-        marginLeft: -127,
+        marginLeft: -145,
         height: 1,
         left: "50%",
         position: "absolute",
     },
     homeChildPosition: {
-        marginLeft: -126,
+        marginLeft: -145,
         width: 254,
         height: 1,
         left: "50%",
@@ -470,7 +470,7 @@ const styles = StyleSheet.create({
     },
     frameIcon: {
         top: 52,
-        left: 236,
+        left: 285,
         width: 23,
         height: 18,
         position: "absolute",
@@ -494,8 +494,8 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         borderColor: "#dadada",
         borderWidth: 1,
-        width: 295,
-        marginLeft: -147,
+        width: 325,
+        marginLeft: -165,
         height: 145,
         left: "50%",
         top: 108,
@@ -516,26 +516,26 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     moneyIn: {
-        left: 101,
+        left: 110,
     },
     materials: {
-        left: 101,
+        left: 111,
     },
     tasks: {
-        left: 251,
+        left: 260,
     },
     moneyOut: {
-        left: 250,
+        left: 260,
     },
     text1: {
         color: "#3cbb00",
         fontSize: FontSize.androidTextStylesBodyMediumSemibold_size,
-        left: 101,
+        left: 110,
     },
     text2: {
         color: "#eb2828",
         fontSize: FontSize.androidTextStylesBodyMediumSemibold_size,
-        left: 250,
+        left: 260,
     },
     iconDownload: {
         right: "73.11%",
@@ -543,7 +543,7 @@ const styles = StyleSheet.create({
     },
     iconDownload1: {
         right: "31.73%",
-        left: "56.39%",
+        left: "54%",
     },
     iconWheelBarrow: {
         height: "9.66%",
@@ -560,7 +560,7 @@ const styles = StyleSheet.create({
         top: "71.03%",
         right: "34.72%",
         bottom: "21.69%",
-        left: "58.33%",
+        left: "56%",
         position: "absolute",
     },
     ellipseParent: {
@@ -587,15 +587,7 @@ const styles = StyleSheet.create({
         maxWidth: "100%",
         overflow: "hidden",
     },
-    fill: {
-        height: "1.5%",
-        width: "1.85%",
-        top: "2.01%",
-        right: "5.37%",
-        left: "92.78%",
-        borderRadius: 1,
-        backgroundColor: Color.materialThemeSysLightOnSurface,
-    },
+
     text3: {
         top: 13,
         lineHeight: 20,
@@ -607,12 +599,24 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     homeItem: {
-        marginLeft: -146,
+        borderRadius: 17,
+
+        borderStyle: "solid",
+
+        borderWidth: 1,
+        width: 500,
+        marginLeft: -165,
+        height: 145,
+        left: "50%",
         top: 316,
+        //marginLeft: -165,
+        //width: 300,
+        //top: 316,
     },
     homeInner: {
-        marginLeft: -145,
+        marginLeft: -165,
         top: 538,
+        borderWidth: 1,
     },
     recentActivity: {
         top: 282,
@@ -642,7 +646,7 @@ const styles = StyleSheet.create({
     },
     no11348th: {
         top: 359,
-        left: 52,
+        left: 51,
     },
     no11348th1: {
         top: 581,
@@ -747,6 +751,7 @@ const styles = StyleSheet.create({
     },
     homeChild4: {
         top: 418,
+        left: -50,
     },
     homeChild5: {
         top: 640,
