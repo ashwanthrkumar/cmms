@@ -1,9 +1,14 @@
 //import liraries
-import React, { Component } from 'react';
+import { useNavigation } from '@react-navigation/core';
+import React, { Component, useLayoutEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
 const HomeScreen = () => {
+    const navigation = useNavigation();
+    useLayoutEffect(() => {
+
+    }, [])
     return (
         <View style={styles.container}>
             <Text>HomeScreen</Text>
