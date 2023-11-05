@@ -1,6 +1,6 @@
 //import liraries
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { View, Text, StyleSheet, Pressable, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -14,10 +14,17 @@ import Stats from './screens/Stats';
 import Track from './screens/Track';
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useFonts } from "expo-font";
 // create a component
 const StackNavigation = () => {
     const Tab = createBottomTabNavigator();
     const Stack = createNativeStackNavigator();
+
+    const [fontsLoaded, error] = useFonts({
+        "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
+        "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+        "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
+    });
 
     function BottomTab() {
         return (
