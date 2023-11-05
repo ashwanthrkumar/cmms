@@ -164,7 +164,7 @@ const HomeScreen = () => {
             <Image
                 style={[styles.iconPlus, styles.iconLayout1]}
                 contentFit="cover"
-                source={`🦆 icon "plus"_18`}
+                source={require("../assets/plus.png")}
             />
         </View>
     );
@@ -810,10 +810,10 @@ const styles = StyleSheet.create({
     iconPlus: {
         height: "2.1%",
         width: "4.67%",
-        top: "88.43%",
+        top: "96.5%",
         right: "6.86%",
         bottom: "9.46%",
-        left: "88.46%",
+        left: "92%",
         position: "absolute",
     },
     home: {
