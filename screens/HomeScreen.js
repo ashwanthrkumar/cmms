@@ -6,9 +6,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
-
 // create a component
 const HomeScreen = () => {
+
+
     return (
         <View style={styles.home}>
             <LinearGradient
