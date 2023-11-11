@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     },
     frameChildPosition: {
         height: 1,
-        width: 325,
+        width: 400,
         borderTopWidth: 1,
         borderColor: Color.colorDarkgray_100,
         borderStyle: "solid",
@@ -427,9 +427,9 @@ const styles = StyleSheet.create({
     iconCog: {
         height: "2.63%",
         width: "5.83%",
-        top: "6.25%",
+        top: "6.1%",
         right: "27.78%",
-        left: "66.39%",
+        left: "78%",
         bottom: "91.13%",
     },
     lineView: {
@@ -564,7 +564,7 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     text13: {
-        left: 13,
+        left: 32,
         fontSize: 6,
         width: 3,
         height: 6,
