@@ -1,10 +1,24 @@
 import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, Button } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Border, Color, FontSize, FontFamily, Padding } from "../GlobalStylesOrder";
+import { useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const OrderSection = () => {
+
+import { NavigationContainer } from '@react-navigation/native';
+
+
+
+
+
+
+
+
+function OrdersMain({ navigation }) {
+
+
     return (
         <View style={[styles.orderSection, styles.orderSectionLayout]}>
             <LinearGradient
@@ -99,16 +113,66 @@ const OrderSection = () => {
                 />
                 <Text style={[styles.text13, styles.aTypo]}>1</Text>
             </View>
-            <View style={[styles.button, styles.buttonFlexBox]}>
+            <TouchableOpacity style={[styles.button, styles.buttonFlexBox]} onPress={() => navigation.navigate('CreateOrder')}>
                 <View style={[styles.stateLayer, styles.buttonFlexBox]}>
-                    <Text style={[styles.labelText, styles.textTypo2]}>
-                        ENTER AN ORDER
-                    </Text>
+                    <Text style={[styles.labelText, styles.textTypo2]}>ENTER AN ORDER</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
+
         </View>
     );
+
+
+}
+
+function CreateOrder({ navigation }) {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 30 }}>This is a modal!</Text>
+            <Button onPress={() => navigation.goBack()} title="Dismiss" />
+        </View>
+    );
+}
+
+function DetailsScreen() {
+    return (
+        <View>
+            <Text>Details</Text>
+        </View>
+    );
+}
+
+const RootStack = createStackNavigator();
+
+function Orders() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={OrdersMain} options={{ headerShown: false }} />
+                    <RootStack.Screen name="Details" component={DetailsScreen} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="CreateOrder" component={CreateOrder} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
+    );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
     orderSectionLayout: {
@@ -606,7 +670,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         elevation: 2,
         shadowOpacity: 1,
-        width: 308,
+        width: 345,
         height: 40,
         backgroundColor: Color.colorRoyalblue,
         position: "absolute",
@@ -620,4 +684,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default OrderSection;
+export default Orders;

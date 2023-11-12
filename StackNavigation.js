@@ -15,6 +15,7 @@ import Track from './screens/Track';
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
+import OrderSection from './screens/Orders';
 // create a component
 const StackNavigation = () => {
     const Tab = createBottomTabNavigator();
@@ -78,6 +79,9 @@ const StackNavigation = () => {
             <Stack.Navigator>
                 <Stack.Screen name="Hello" component={BottomTab} options={{ headerShown: false }} />
             </Stack.Navigator>
+
+
+
         </NavigationContainer>
     );
 };
