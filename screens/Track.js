@@ -1,10 +1,14 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Color, Border, FontSize, FontFamily } from "../GlobalStyles";
+import { Color, Border, FontSize, FontFamily } from "../GlobalStylesTrack";
 
 const Track = () => {
+    const handleCardButtonClick = () => {
+
+        alert('Button inside the card clicked!');
+    };
     return (
         <View style={[styles.trackSectioon, styles.trackSectioonLayout]}>
             <LinearGradient
@@ -16,7 +20,7 @@ const Track = () => {
                 colors={["#fff", "rgba(0, 117, 255, 0)"]}
             >
                 <Image
-                    style={styles.screenshot202310302206181}
+                    style={styles.map}
                     contentFit="cover"
                     source={require("../assets/map.png")}
                 />
@@ -30,39 +34,39 @@ const Track = () => {
                     contentFit="cover"
                     source={require("../assets/vector-8.png")}
                 />
-                <View style={[styles.ellipseParent, styles.groupLayout]}>
+                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.ellipseParent, styles.groupLayout]}>
                     <Image
                         style={[styles.groupChild, styles.groupPosition]}
                         contentFit="cover"
-                        source={require("../assets/ellipse-4.png")}
+                        source={require("../assets/ellipse-6.png")}
                     />
                     <Text style={styles.text}>1</Text>
-                </View>
-                <View style={[styles.ellipseGroup, styles.groupLayout]}>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.ellipseGroup, styles.groupLayout]}>
                     <Image
                         style={[styles.groupItem, styles.groupPosition]}
                         contentFit="cover"
-                        source={require("../assets/ellipse-41.png")}
+                        source={require("../assets/ellipse-6.png")}
                     />
                     <Text style={styles.text}>3</Text>
-                </View>
-                <View style={[styles.ellipseContainer, styles.groupLayout]}>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.ellipseContainer, styles.groupLayout]}>
                     <Image
                         style={[styles.groupChild, styles.groupPosition]}
                         contentFit="cover"
-                        source={require("../assets/ellipse-42.png")}
+                        source={require("../assets/ellipse-6.png")}
                     />
                     <Text style={styles.text}>2</Text>
-                </View>
-                <View style={[styles.groupView, styles.groupLayout]}>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.groupView, styles.groupLayout]}>
                     <Image
                         style={[styles.groupChild, styles.groupPosition]}
                         contentFit="cover"
-                        source={require("../assets/ellipse-43.png")}
+                        source={require("../assets/ellipse-6.png")}
                     />
                     <Text style={styles.text}>4</Text>
-                </View>
-                <View style={[styles.rectangleParent, styles.groupParentLayout]}>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.rectangleParent, styles.groupParentLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
                     <LinearGradient
                         style={[styles.rectangleLineargradient, styles.rectangleBorder]}
@@ -73,9 +77,9 @@ const Track = () => {
                     <Image
                         style={styles.groupIcon}
                         contentFit="cover"
-                        source={require("../assets/group-45847.png")}
+                        source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
                 <View style={[styles.rectangleGroup, styles.groupParentLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
                     <LinearGradient
@@ -87,13 +91,13 @@ const Track = () => {
                     <Image
                         style={styles.groupIcon}
                         contentFit="cover"
-                        source={require("../assets/group-458471.png")}
+                        source={require("../assets/right.png")}
                     />
                 </View>
                 <Image
                     style={[styles.frameInner, styles.frameChildLayout]}
                     contentFit="cover"
-                    source={require("../assets/ellipse-5.png")}
+                    source={require("../assets/ellipse-6.png")}
                 />
                 <Image
                     style={[styles.frameChild1, styles.frameChildLayout]}
@@ -129,13 +133,13 @@ Magadi Road, Bangalore- 23`}</Text>
                     <Image
                         style={styles.groupIcon}
                         contentFit="cover"
-                        source={require("../assets/group-458472.png")}
+                        source={require("../assets/right.png")}
                     />
                 </View>
                 <Image
                     style={[styles.groupChild7, styles.frameChildLayout]}
                     contentFit="cover"
-                    source={require("../assets/ellipse-7.png")}
+                    source={require("../assets/ellipse-6.png")}
                 />
                 <Text style={[styles.text6, styles.textTypo]}>3</Text>
                 <Text style={[styles.tanishPrasad, styles.nithinReddyTypo]}>
@@ -158,13 +162,13 @@ Magadi Road, Bangalore- 23`}</Text>
                     <Image
                         style={styles.groupIcon}
                         contentFit="cover"
-                        source={require("../assets/group-458473.png")}
+                        source={require("../assets/right.png")}
                     />
                 </View>
                 <Image
                     style={[styles.groupChild7, styles.frameChildLayout]}
                     contentFit="cover"
-                    source={require("../assets/ellipse-71.png")}
+                    source={require("../assets/ellipse-6.png")}
                 />
                 <Text style={[styles.text6, styles.textTypo]}>4</Text>
                 <Text style={[styles.nithinReddy, styles.nithinReddyTypo]}>
@@ -194,10 +198,11 @@ Magadi Road, Bangalore- 23`}</Text>
 const styles = StyleSheet.create({
     trackSectioonLayout: {
         height: 800,
+        width: "100%",
         overflow: "hidden",
     },
     frameChildPosition: {
-        width: 360,
+        width: 395,
         backgroundColor: "transparent",
         left: 0,
         position: "absolute",
@@ -276,7 +281,7 @@ const styles = StyleSheet.create({
         textAlign: "left",
         position: "absolute",
     },
-    screenshot202310302206181: {
+    map: {
         top: 39,
         width: 441,
         height: 374,
@@ -293,7 +298,7 @@ const styles = StyleSheet.create({
         top: 376,
         width: 42,
         height: 5,
-        left: 159,
+        left: 170,
         position: "absolute",
     },
     groupChild: {
@@ -360,7 +365,7 @@ const styles = StyleSheet.create({
     },
     rectangleParent: {
         top: 413,
-        left: 16,
+        left: 28,
         width: 327,
         position: "absolute",
     },
@@ -370,30 +375,30 @@ const styles = StyleSheet.create({
     },
     rectangleGroup: {
         top: 493,
-        left: 16,
+        left: 28,
         width: 327,
         position: "absolute",
     },
     frameInner: {
         top: 427,
-        left: 33,
+        left: 45,
         height: 31,
         width: 31,
     },
     frameChild1: {
         top: 507,
-        left: 33,
+        left: 45,
         height: 31,
         width: 31,
     },
     text4: {
         top: 433,
-        left: 43,
+        left: 53,
         fontSize: FontSize.size_lg,
     },
     text5: {
         top: 513,
-        left: 43,
+        left: 53,
         fontSize: FontSize.size_lg,
     },
     mahentashKumar: {
@@ -412,13 +417,13 @@ const styles = StyleSheet.create({
     },
     no11348th: {
         top: 442,
-        left: 71,
+        left: 82,
         fontFamily: FontFamily.robotoRegular,
         fontSize: FontSize.size_7xs,
     },
     no11348th1: {
         top: 522,
-        left: 71,
+        left: 82,
         fontFamily: FontFamily.robotoRegular,
         fontSize: FontSize.size_7xs,
     },
@@ -444,7 +449,7 @@ const styles = StyleSheet.create({
     },
     groupParent: {
         top: 573,
-        left: 16,
+        left: 28,
         width: 327,
         position: "absolute",
     },
@@ -453,7 +458,7 @@ const styles = StyleSheet.create({
     },
     groupContainer: {
         top: 653,
-        left: 16,
+        left: 28,
         width: 327,
         position: "absolute",
     },
