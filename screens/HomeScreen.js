@@ -6,12 +6,22 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
+
+
+
+
+
+
 // create a component
 const HomeScreen = () => {
 
 
     return (
+
+
+
         <View style={styles.home}>
+
             <LinearGradient
                 style={[styles.homeChild, styles.homeChildPosition2]}
                 locations={[0, 1]}
@@ -33,6 +43,7 @@ const HomeScreen = () => {
                     contentFit="cover"
                     source={require("../assets/group.png")}
                 />
+
                 <Image
                     style={styles.frameItemnotify}
                     contentFit="cover"

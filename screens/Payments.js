@@ -1,11 +1,23 @@
-import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import React, { useState } from "react";
+import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Color, FontFamily, Border, FontSize } from "../GlobalStylesPayments";
 
 
 const Payments = () => {
+    const [isCardVisible, setCardVisibility] = useState(false);
+
+    const handleViewDetailsClick = () => {
+        setCardVisibility(!isCardVisible);
+    };
+    const handleCloseButtonClick = () => {
+        setCardVisibility(false);
+    };
+    const handleCardButtonClick = () => {
+
+        alert('Button inside the card clicked!');
+    };
     return (
         <View style={styles.paymentSection}>
             <LinearGradient
@@ -88,7 +100,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/up.png")}
                 />
-                <View style={[styles.viewDetailsParent, styles.viewParentLayout]}>
+                <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent, styles.viewParentLayout]}>
                     <Text style={[styles.viewDetails, styles.textTypo]}>
                         VIEW DETAILS
                     </Text>
@@ -97,7 +109,7 @@ const Payments = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={[styles.rectangleContainer, styles.groupViewLayout]}>
                 <View style={[styles.rectangleView, styles.groupViewLayout]} />
@@ -113,7 +125,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/down.png")}
                 />
-                <View style={[styles.viewDetailsParent, styles.viewParentLayout]}>
+                <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent, styles.viewParentLayout]}>
                     <Text style={[styles.viewDetails, styles.textTypo]}>
                         VIEW DETAILS
                     </Text>
@@ -122,7 +134,7 @@ const Payments = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={[styles.groupView, styles.groupViewLayout]}>
                 <View style={[styles.rectangleView, styles.groupViewLayout]} />
@@ -138,7 +150,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/up.png")}
                 />
-                <View style={[styles.viewDetailsParent, styles.viewParentLayout]}>
+                <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent, styles.viewParentLayout]}>
                     <Text style={[styles.viewDetails, styles.textTypo]}>
                         VIEW DETAILS
                     </Text>
@@ -147,7 +159,7 @@ const Payments = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={[styles.rectangleParent1, styles.groupViewLayout]}>
                 <View style={[styles.rectangleView, styles.groupViewLayout]} />
@@ -163,7 +175,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/down.png")}
                 />
-                <View style={[styles.viewDetailsParent, styles.viewParentLayout]}>
+                <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent, styles.viewParentLayout]}>
                     <Text style={[styles.viewDetails, styles.textTypo]}>
                         VIEW DETAILS
                     </Text>
@@ -172,7 +184,7 @@ const Payments = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={[styles.rectangleParent2, styles.groupViewLayout]}>
                 <View style={[styles.rectangleView, styles.groupViewLayout]} />
@@ -188,7 +200,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/up.png")}
                 />
-                <View style={[styles.viewDetailsParent, styles.viewParentLayout]}>
+                <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent, styles.viewParentLayout]}>
                     <Text style={[styles.viewDetails, styles.textTypo]}>
                         VIEW DETAILS
                     </Text>
@@ -197,16 +209,43 @@ const Payments = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
             </View>
-            <View style={[styles.viewDetailsParent3, styles.viewParentLayout]}>
+            <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent3, styles.viewParentLayout]}>
                 <Text style={[styles.viewDetails, styles.textTypo]}>VIEW DETAILS</Text>
                 <Image
                     style={[styles.iconAngleDoubleRight, styles.iconPosition]}
                     contentFit="cover"
                     source={require("../assets/right.png")}
                 />
-            </View>
+            </TouchableOpacity>
+
+            {isCardVisible && (
+                <View style={styles.card}>
+                    <TouchableOpacity onPress={handleCloseButtonClick} style={styles.closeButton}>
+                        <Text style={styles.closeButtonText}>X</Text>
+                    </TouchableOpacity>
+                    {/* Card content goes here */}
+                    <Text >Reference Number: <Text style={styles.italic}>4783883298977</Text></Text>
+                    <Text >Transaction Date & Time: <Text style={styles.italic}>16/05/2023, 10:50:00 AM</Text></Text>
+                    <Text >Address: <Text style={styles.italic}>No. 11/34, 8th Cross, Manjunathnagar,
+                        Magadi Road, Bangalore - 23</Text></Text>
+                    <Text >Materials: <Text style={styles.italic}>Cement, Steel Rods, Bricks</Text></Text>
+                    <TouchableOpacity onPress={handleCardButtonClick} style={styles.cardButton}>
+                        <Text style={styles.cardButtonText}>Download Recipt</Text>
+                    </TouchableOpacity>
+                </View>
+            )}
+
+
+
+
+
+
+
+
+
+
             <View style={[styles.rectangleParent3, styles.groupViewLayout]}>
                 <View style={[styles.rectangleView, styles.groupViewLayout]} />
                 <LinearGradient
@@ -221,7 +260,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/down.png")}
                 />
-                <View style={[styles.viewDetailsParent, styles.viewParentLayout]}>
+                <TouchableOpacity onPress={handleViewDetailsClick} style={[styles.viewDetailsParent, styles.viewParentLayout]}>
                     <Text style={[styles.viewDetails, styles.textTypo]}>
                         VIEW DETAILS
                     </Text>
@@ -230,7 +269,7 @@ const Payments = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
             </View>
 
         </View>
@@ -239,6 +278,48 @@ const Payments = () => {
 
 
 const styles = StyleSheet.create({
+    italic: {
+        fontWeight: 'bold',
+        fontStyle: 'italic',
+    },
+    card: {
+        position: "absolute",
+        top: 100, // Adjust the position as needed
+        left: 30, // Adjust the position as needed
+        width: "85%",
+        height: 200,
+        backgroundColor: "#ffffff",
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: "#000000",
+        padding: 10,
+        zIndex: 2, // Make sure the card is above other elements
+    },
+    closeButton: {
+        position: "absolute",
+        top: 5,
+        right: 5,
+        padding: 5,
+        backgroundColor: "#cccccc",
+        borderRadius: 5,
+        zIndex: 3, // Make sure the close button is above the card content
+    },
+    closeButtonText: {
+        fontSize: 16,
+        fontWeight: "bold",
+        color: "#000000",
+    },
+    cardButton: {
+        marginTop: 10, // Adjust the margin as needed
+        backgroundColor: '#3498db',
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
+    cardButtonText: {
+        color: '#ffffff',
+        fontWeight: 'bold',
+    },
     paymentFlexBox: {
         textAlign: "center",
         position: "absolute",
