@@ -21,7 +21,7 @@ const Createorder = () => {
                 <Text style={[styles.text, styles.textTypo3]}>+</Text>
                 <Text style={[styles.text1, styles.textTypo3]}>-</Text>
                 <Text style={[styles.sgst, styles.textTypo3]}>SGST:</Text>
-                <Text style={[styles.cgst, styles.textTypo3]}>CGST</Text>
+                <Text style={[styles.cgst, styles.textTypo3]}>CGST:</Text>
                 <Text style={[styles.finalTotal, styles.textTypo3]}>Final Total:</Text>
                 <Text style={[styles.text2, styles.textTypo2]}>₹0</Text>
                 <Text style={[styles.text3, styles.textTypo1]}>0%</Text>
@@ -40,11 +40,7 @@ const Createorder = () => {
                 <Text style={[styles.searchMaterial, styles.orderNumberTypo]}>
                     Search Material
                 </Text>
-                {/* <Image
-                    style={[styles.iconSearchOutline, styles.iconLayout]}
-                    contentFit="cover"
-                    source={`🦆 icon "search outline"_3`}
-                /> */}
+
             </View>
             <View style={[styles.orderNumberWrapper, styles.lineWrapperLayout]}>
                 <Text style={[styles.orderNumber, styles.orderNumberTypo]}>
@@ -216,7 +212,7 @@ const styles = StyleSheet.create({
         borderRadius: Border.br_7xs,
     },
     frameItem: {
-        top: 246,
+        top: 175,
         left: 26,
         borderWidth: 1,
         borderColor: Color.colorDarkgray_200,
@@ -224,11 +220,11 @@ const styles = StyleSheet.create({
         borderRadius: Border.br_7xs,
     },
     frameInner: {
-        top: 329,
+        top: 250,
         left: 27,
     },
     rectangleView: {
-        top: 412,
+        top: 325,
         left: 27,
     },
     total: {
@@ -240,7 +236,7 @@ const styles = StyleSheet.create({
         left: 203,
         textAlign: "center",
         position: "absolute",
-        top: 580,
+        top: 430,
     },
     text: {
         left: 256,
@@ -266,7 +262,7 @@ const styles = StyleSheet.create({
     },
     sgst: {
         left: 199,
-        top: 608,
+        top: 450,
         letterSpacing: 0,
         fontWeight: "500",
         lineHeight: 20,
@@ -276,7 +272,7 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     cgst: {
-        top: 636,
+        top: 470,
         letterSpacing: 0,
         fontWeight: "500",
         lineHeight: 20,
@@ -288,7 +284,7 @@ const styles = StyleSheet.create({
     },
     finalTotal: {
         left: 169,
-        top: 664,
+        top: 490,
         letterSpacing: 0,
         fontWeight: "500",
         lineHeight: 20,
@@ -298,16 +294,16 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     text2: {
-        top: 580,
+        top: 430,
     },
     text3: {
-        top: 608,
+        top: 450,
     },
     text4: {
-        top: 636,
+        top: 470,
     },
     text5: {
-        top: 664,
+        top: 490,
     },
     newOrderRegistrationParent: {
         width: 400,
@@ -361,7 +357,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     button: {
-        top: 740,
+        top: 600,
         borderRadius: Border.br_81xl,
         shadowColor: "rgba(0, 0, 0, 0.3)",
         shadowOffset: {
@@ -374,7 +370,7 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: Color.colorRoyalblue,
         left: 27,
-        width: 308,
+        width: 335,
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
@@ -402,17 +398,17 @@ const styles = StyleSheet.create({
 
     },
     orderNumberWrapper: {
-        top: 100,
+        top: 190,
         width: 300,
         left: 43,
     },
     customerNameWrapper: {
-        top: 346,
-        width: 109,
+        top: 265,
+        width: 300,
     },
     deliveryAddressWrapper: {
-        top: 429,
-        width: 112,
+        top: 340,
+        width: 300,
     },
     groupChild: {
         left: 0,
@@ -426,12 +422,13 @@ const styles = StyleSheet.create({
         top: 0,
     },
     lineParent: {
-        top: 475,
+        top: 400,
         left: 88,
         width: 183,
     },
     lineView: {
         left: 159,
+        top: -80,
     },
     addMaterialWrapper: {
         width: 300,
@@ -439,7 +436,7 @@ const styles = StyleSheet.create({
         top: 0,
     },
     lineGroup: {
-        top: 215,
+        top: 140,
         left: 77,
         width: 211,
     },
