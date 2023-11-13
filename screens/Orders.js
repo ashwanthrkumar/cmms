@@ -6,7 +6,7 @@ import { Border, Color, FontSize, FontFamily, Padding } from "../GlobalStylesOrd
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
+import Createorder from "./Createaorder"
 import { NavigationContainer } from '@react-navigation/native';
 
 
@@ -113,7 +113,7 @@ function OrdersMain({ navigation }) {
                 />
                 <Text style={[styles.text13, styles.aTypo]}>1</Text>
             </View>
-            <TouchableOpacity style={[styles.button, styles.buttonFlexBox]} onPress={() => navigation.navigate('CreateOrder')}>
+            <TouchableOpacity style={[styles.button, styles.buttonFlexBox]} onPress={() => navigation.navigate('New Order Registration')}>
                 <View style={[styles.stateLayer, styles.buttonFlexBox]}>
                     <Text style={[styles.labelText, styles.textTypo2]}>ENTER AN ORDER</Text>
                 </View>
@@ -125,14 +125,108 @@ function OrdersMain({ navigation }) {
 
 }
 
-function CreateOrder({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 30 }}>This is a modal!</Text>
-            <Button onPress={() => navigation.goBack()} title="Dismiss" />
-        </View>
-    );
-}
+// function CreateOrder({ navigation }) {
+//     return (
+//         <View style={[styles.createANewOrderSection, styles.newLayout]}>
+//             <LinearGradient
+//                 style={[styles.newOrderRegistrationParent, styles.newLayout]}
+//                 locations={[0, 1]}
+//                 colors={["rgba(119, 166, 255, 0.46)", "rgba(255, 107, 107, 0.32)"]}
+//             >
+//                 <Text style={[styles.newOrderRegistration, styles.sgstFlexBox]}>
+//                     New Order Registration
+//                 </Text>
+//                 <View style={[styles.frameChild, styles.frameLayout]} />
+//                 <View style={[styles.frameItem, styles.frameLayout]} />
+//                 <View style={[styles.frameInner, styles.frameLayout]} />
+//                 <View style={[styles.rectangleView, styles.frameLayout]} />
+//                 <Text style={[styles.total, styles.totalTypo]}>Total:</Text>
+//                 <Text style={[styles.sgst, styles.totalTypo]}>SGST:</Text>
+//                 <Text style={[styles.cgst, styles.totalTypo]}>CGST</Text>
+//                 <Text style={[styles.finalTotal, styles.totalTypo]}>Final Total:</Text>
+//                 <Text style={[styles.text, styles.textTypo2]}>₹0</Text>
+//                 <Text style={[styles.text1, styles.textTypo1]}>0%</Text>
+//                 <Text style={[styles.text2, styles.textTypo1]}>0%</Text>
+//                 <Text style={[styles.text3, styles.textTypo2]}>₹0</Text>
+//             </LinearGradient>
+
+
+//             <View style={[styles.fill, styles.fillPosition]} />
+//             <View style={[styles.button, styles.buttonFlexBox]}>
+//                 <View style={[styles.stateLayer, styles.buttonFlexBox]}>
+//                     <Text style={[styles.labelText, styles.textTypo]}>CREATE</Text>
+//                 </View>
+//             </View>
+//             <Image
+//                 style={[styles.iconMinusCircle, styles.iconLayout]}
+//                 contentFit="cover"
+//                 source={`🦆 icon "minus circle"_3`}
+//             />
+//             <Image
+//                 style={[styles.iconPlusCircle, styles.iconLayout]}
+//                 contentFit="cover"
+//                 source={`🦆 icon "plus circle"_4`}
+//             />
+//             <View style={[styles.searchMaterialParent, styles.quantityWrapperLayout]}>
+//                 <Text style={[styles.searchMaterial, styles.orderNumberTypo]}>
+//                     Search Material
+//                 </Text>
+//                 <Image
+//                     style={[styles.iconSearchOutline, styles.iconLayout1]}
+//                     contentFit="cover"
+//                     source={`🦆 icon "search outline"_5`}
+//                 />
+//             </View>
+//             <View style={[styles.orderNumberWrapper, styles.lineWrapperLayout]}>
+//                 <Text style={[styles.orderNumber, styles.orderNumberTypo]}>
+//                     # Order Number
+//                 </Text>
+//             </View>
+//             <View style={[styles.customerNameWrapper, styles.wrapperPosition]}>
+//                 <Text style={[styles.orderNumber, styles.orderNumberTypo]}>
+//                     Customer Name
+//                 </Text>
+//             </View>
+//             <View style={[styles.deliveryAddressWrapper, styles.wrapperPosition]}>
+//                 <Text style={[styles.orderNumber, styles.orderNumberTypo]}>
+//                     Delivery Address
+//                 </Text>
+//             </View>
+//             <View style={[styles.lineParent, styles.lineWrapperLayout]}>
+//                 <View style={[styles.groupChild, styles.groupLayout]} />
+//                 <View style={[styles.groupItem, styles.groupLayout]} />
+//                 <View style={[styles.addLineWrapper, styles.lineWrapperLayout]}>
+//                     <Text style={[styles.orderNumber, styles.orderNumberTypo]}>
+//                         + Add Line
+//                     </Text>
+//                 </View>
+//             </View>
+//             <View style={[styles.lineGroup, styles.lineWrapperLayout]}>
+//                 <View style={[styles.groupChild, styles.groupLayout]} />
+//                 <View style={[styles.lineView, styles.groupLayout]} />
+//                 <View style={[styles.addMaterialWrapper, styles.lineWrapperLayout]}>
+//                     <Text style={[styles.orderNumber, styles.orderNumberTypo]}>
+//                         + Add Material
+//                     </Text>
+//                 </View>
+//             </View>
+//             <View style={[styles.quantityWrapper, styles.quantityWrapperLayout]}>
+//                 <Text style={[styles.quantity, styles.sgstFlexBox]}>Quantity</Text>
+//             </View>
+//             <View style={[styles.rectangleParent, styles.groupChild1Layout]}>
+//                 <View style={[styles.groupChild1, styles.groupChild1Layout]} />
+//                 <View style={styles.wrapper}>
+//                     <Text style={[styles.text5, styles.textTypo]}>0</Text>
+//                 </View>
+//             </View>
+//             <Image
+//                 style={[styles.iconArrowLeft, styles.iconLayout1]}
+//                 contentFit="cover"
+//                 source={`🦆 icon "arrow left"_6`}
+//             />
+//         </View>
+//     );
+// }
 
 function DetailsScreen() {
     return (
@@ -153,7 +247,7 @@ function Orders() {
                     <RootStack.Screen name="Details" component={DetailsScreen} />
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
-                    <RootStack.Screen name="CreateOrder" component={CreateOrder} />
+                    <RootStack.Screen name="New Order Registration" component={Createorder} />
                 </RootStack.Group>
 
             </RootStack.Navigator>
