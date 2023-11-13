@@ -228,8 +228,10 @@ const Payments = () => {
                     {/* Card content goes here */}
                     <Text >Reference Number: <Text style={styles.italic}>4783883298977</Text></Text>
                     <Text >Transaction Date & Time: <Text style={styles.italic}>16/05/2023, 10:50:00 AM</Text></Text>
-                    <Text >Address: <Text style={styles.italic}>No. 11/34, 8th Cross, Manjunathnagar,
-                        Magadi Road, Bangalore - 23</Text></Text>
+                    <Text >Address: <Text style={styles.italic}
+                    >{`No. 11/34, 8th Cross, Manjunathnagar,
+                    Magadi Road, Bangalore- 23`}</Text>
+                    </Text>
                     <Text >Materials: <Text style={styles.italic}>Cement, Steel Rods, Bricks</Text></Text>
                     <TouchableOpacity onPress={handleCardButtonClick} style={styles.cardButton}>
                         <Text style={styles.cardButtonText}>Download Recipt</Text>

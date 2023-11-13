@@ -18,7 +18,7 @@ const Track = () => {
                 <Image
                     style={styles.screenshot202310302206181}
                     contentFit="cover"
-                    source={require("../assets/screenshot-20231030-220618-1.png")}
+                    source={require("../assets/map.png")}
                 />
                 <LinearGradient
                     style={[styles.frameChild, styles.frameChildPosition]}
