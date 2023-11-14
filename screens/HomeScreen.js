@@ -1,43 +1,46 @@
 //import liraries
 import { useNavigation } from '@react-navigation/core';
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import Profile from './Profile';
 
-
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 
 
 
 // create a component
-const HomeScreen = () => {
+function HomeMain({ navigation }) {
 
+    const handleCardButtonClick = () => {
 
+        alert('Button inside the card clicked!');
+    };
     return (
 
 
 
         <View style={styles.home}>
 
-            <LinearGradient
-                style={[styles.homeChild, styles.homeChildPosition2]}
-                locations={[0, 1]}
-                colors={["#fff", "#3162bf"]}
-            />
+
             <LinearGradient
                 style={[styles.ellipseParent, styles.homeChildPosition2]}
                 locations={[0, 1]}
                 colors={["#fff", "rgba(0, 117, 255, 0)"]}
             >
+
                 <Image
                     style={[styles.frameChild, styles.frameChildPosition]}
                     contentFit="cover"
                     source={require("../assets/ellipse-1.png")}
                 />
-                <Text style={[styles.a, styles.issueTypoa]}>A</Text>
+                <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.issueTypoa]}>A</Text>
+
                 <Image
                     style={[styles.groupIcon, styles.iconLayoutnotify]}
                     contentFit="cover"
@@ -182,6 +185,38 @@ const HomeScreen = () => {
     );
 
 };
+
+
+
+
+
+
+const RootStack = createStackNavigator();
+
+function HomeScreen() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={HomeMain} options={{ headerShown: false }} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="Profile" component={Profile} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+
+
+
+
+
+
+
+
 
 // define your styles
 const styles = StyleSheet.create({
@@ -417,6 +452,7 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     homeChild: {
+
         top: 593,
         height: 485,
     },
@@ -502,9 +538,9 @@ const styles = StyleSheet.create({
     },
     frameInner: {
         borderRadius: 17,
-        backgroundColor: "#eeecec",
+        backgroundColor: "#dfdfdf",
         borderStyle: "solid",
-        borderColor: "#dadada",
+        borderColor: "#d1d1d1",
         borderWidth: 1,
         width: 325,
         marginLeft: -165,
@@ -833,7 +869,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 800,
         overflow: "hidden",
-        backgroundColor: Color.colorWhite,
+        backgroundColor: "#add1f0",
     },
 });
 

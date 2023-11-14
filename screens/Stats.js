@@ -9,6 +9,7 @@ import DriStats from "./DriStats"
 import LocStats from "./LocStats"
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import Profile from "./Profile";
 
 function StatsMain({ navigation }) {
     const handleCardButtonClick = () => {
@@ -39,7 +40,7 @@ function StatsMain({ navigation }) {
                         contentFit="cover"
                         source={require("../assets/ellipse-1.png")}
                     />
-                    <Text style={[styles.a, styles.aClr]}>A</Text>
+                    <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.aClr]}>A</Text>
                 </View>
                 <View style={[styles.groupParent, styles.iconCogPosition]}>
                     <Image
@@ -165,11 +166,12 @@ function Stats() {
                 <RootStack.Group>
                     <RootStack.Screen name="Home" component={StatsMain} options={{ headerShown: false }} />
                 </RootStack.Group>
-                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                <RootStack.Group >
                     <RootStack.Screen name="Material Stats" component={MatStats} />
                     <RootStack.Screen name="Money Stats" component={MonStats} />
                     <RootStack.Screen name="Driver Stats" component={DriStats} />
                     <RootStack.Screen name="Location Stats" component={LocStats} />
+                    <RootStack.Screen name="Profile" component={Profile} />
                 </RootStack.Group>
 
             </RootStack.Navigator>
@@ -654,7 +656,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
         width: "100%",
         height: 800,
-        backgroundColor: Color.colorWhite,
+        backgroundColor: "#add1f0",
     },
 });
 

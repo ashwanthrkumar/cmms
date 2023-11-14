@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Border, Color, FontSize, FontFamily, Padding } from "../GlobalStylesOrder";
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import Profile from "./Profile";
 import Createorder from "./Createaorder"
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -98,7 +98,7 @@ function OrdersMain({ navigation }) {
                     contentFit="cover"
                     source={require("../assets/ellipse-1.png")}
                 />
-                <Text style={[styles.a, styles.aTypo]}>A</Text>
+                <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.aTypo]}>A</Text>
             </View>
             <View style={styles.groupParent}>
                 <Image
@@ -145,6 +145,7 @@ function Orders() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="New Order Registration" component={Createorder} />
+                    <RootStack.Screen name="Profile" component={Profile} />
                 </RootStack.Group>
 
             </RootStack.Navigator>
@@ -261,11 +262,11 @@ const styles = StyleSheet.create({
     },
     frameChildPosition: {
         height: 1,
-        width: 400,
+        width: 350,
         borderTopWidth: 1,
         borderColor: Color.colorDarkgray_100,
         borderStyle: "solid",
-        left: "50%",
+        left: "45%",
         marginLeft: -163.5,
         position: "absolute",
     },
@@ -484,7 +485,7 @@ const styles = StyleSheet.create({
         width: "5.83%",
         top: "6.1%",
         right: "27.78%",
-        left: "78%",
+        left: "70%",
         bottom: "91.13%",
     },
     lineView: {
@@ -581,7 +582,7 @@ const styles = StyleSheet.create({
         top: 335,
     },
     ordersParent: {
-        width: 360,
+        width: 395,
         backgroundColor: "transparent",
         position: "absolute",
         overflow: "hidden",
@@ -668,7 +669,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
     orderSection: {
-        backgroundColor: Color.colorWhite,
+        backgroundColor: "#add1f0",
         width: "100%",
         overflow: "hidden",
         flex: 1,

@@ -3,9 +3,10 @@ import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Color, FontFamily, Border, FontSize } from "../GlobalStylesPayments";
-
-
-const Payments = () => {
+import Profile from "./Profile";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+function PayMain({ navigation }) {
     const [isCardVisible, setCardVisibility] = useState(false);
 
     const handleViewDetailsClick = () => {
@@ -70,7 +71,7 @@ const Payments = () => {
                     contentFit="cover"
                     source={require("../assets/ellipse-1.png")}
                 />
-                <Text style={[styles.a, styles.textFlexBox]}>A</Text>
+                <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.textFlexBox]}>A</Text>
             </View>
             <View style={[styles.groupParent, styles.groupParentLayout]}>
                 <Image
@@ -279,6 +280,39 @@ const Payments = () => {
 };
 
 
+
+
+const RootStack = createStackNavigator();
+
+function Payments() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={PayMain} options={{ headerShown: false }} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="Profile" component={Profile} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const styles = StyleSheet.create({
     italic: {
         fontWeight: 'bold',
@@ -482,7 +516,7 @@ const styles = StyleSheet.create({
         width: "5.83%",
         top: "6.25%",
         right: "27.78%",
-        left: "78%",
+        left: "70.5%",
         bottom: "91.13%",
         position: "absolute",
     },
@@ -527,7 +561,7 @@ const styles = StyleSheet.create({
         fontSize: FontSize.size_5xl,
     },
     paymentParent: {
-        width: 360,
+        width: 395,
         backgroundColor: "transparent",
         left: 0,
         top: 0,
@@ -713,7 +747,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
     paymentSection: {
-        //backgroundColor: Color.colorWhite,
+        backgroundColor: "#add1f0",
         flex: 1,
         width: "100%",
         overflow: "hidden",
