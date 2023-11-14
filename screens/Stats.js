@@ -1,11 +1,22 @@
 import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Color, FontFamily, FontSize } from "../GlobalStyles";
+import { Color, FontFamily, FontSize } from "../GlobalStylesS";
+import MatStats from "./MatStats"
+import MonStats from "./MonStats"
+import DriStats from "./DriStats"
+import LocStats from "./LocStats"
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-const Stats = () => {
+function StatsMain({ navigation }) {
+    const handleCardButtonClick = () => {
+
+        alert('Button inside the card clicked!');
+    };
     return (
+
         <View style={[styles.statsSection, styles.statsSectionLayout]}>
             <LinearGradient
                 style={[styles.stasticsParent, styles.statsSectionLayout]}
@@ -20,7 +31,7 @@ const Stats = () => {
                 <Image
                     style={[styles.iconCog, styles.iconLayout]}
                     contentFit="cover"
-                    source={`🦆 icon "cog"_1`}
+                    source={require("../assets/settings.png")}
                 />
                 <View style={[styles.ellipseParent, styles.groupItemLayout]}>
                     <Image
@@ -46,12 +57,12 @@ const Stats = () => {
                 <Image
                     style={[styles.frameChild, styles.frameLayout]}
                     contentFit="cover"
-                    source={require("../assets/ellipse-10.png")}
+                    source={require("../assets/ellipse-6.png")}
                 />
                 <Image
                     style={[styles.frameItem, styles.frameLayout]}
                     contentFit="cover"
-                    source={require("../assets/ellipse-11.png")}
+                    source={require("../assets/ellipse-6.png")}
                 />
                 <Text style={[styles.profitGenerated, styles.materialsSoldTypo]}>
                     PROFIT GENERATED
@@ -64,66 +75,45 @@ const Stats = () => {
                 <Image
                     style={styles.frameInner}
                     contentFit="cover"
-                    source={require("../assets/group-45880.png")}
+                    source={require("../assets/graph.png")}
                 />
                 <View style={styles.rectangleView} />
                 <Image
                     style={styles.vectorIcon}
                     contentFit="cover"
-                    source={require("../assets/vector-10.png")}
+                    source={require("../assets/vector-1.png")}
                 />
                 <Image
                     style={[styles.frameChild1, styles.lineLayout]}
                     contentFit="cover"
-                    source={require("../assets/vector-11.png")}
+                    source={require("../assets/vector-3.png")}
                 />
             </LinearGradient>
-            <Text style={[styles.materials, styles.statsTypo1]}>MATERIALS</Text>
-            <Text style={[styles.driver, styles.statsTypo1]}>DRIVER</Text>
-            <Text style={[styles.money, styles.statsTypo]}>MONEY</Text>
-            <Text style={[styles.location, styles.statsTypo]}>LOCATION</Text>
-            <Text style={[styles.stats, styles.statsTypo1]}>STATS</Text>
-            <Text style={[styles.stats1, styles.statsTypo1]}>STATS</Text>
-            <Text style={[styles.stats2, styles.statsTypo]}>STATS</Text>
-            <Text style={[styles.stats3, styles.statsTypo]}>STATS</Text>
-            <Image
-                style={[styles.iconWheelBarrow, styles.iconLayout]}
-                contentFit="cover"
-                source={`🦆 icon "wheel-barrow"_10`}
-            />
+
+            <Text onPress={() => navigation.navigate('Material Stats')} style={[styles.materials, styles.statsTypo1]}>MATERIALS</Text>
+            <Text onPress={() => navigation.navigate('Driver Stats')} style={[styles.driver, styles.statsTypo1]}>DRIVER</Text>
+            <Text onPress={() => navigation.navigate('Money Stats')} style={[styles.money, styles.statsTypo]}>MONEY</Text>
+            <Text onPress={() => navigation.navigate('Location Stats')} style={[styles.location, styles.statsTypo]}>LOCATION</Text>
+            <Text onPress={() => navigation.navigate('Material Stats')} style={[styles.stats, styles.statsTypo1]}>STATS</Text>
+            <Text onPress={() => navigation.navigate('Driver Stats')} style={[styles.stats1, styles.statsTypo1]}>STATS</Text>
+            <Text onPress={() => navigation.navigate('Money Stats')} style={[styles.stats2, styles.statsTypo]}>STATS</Text>
+            <Text onPress={() => navigation.navigate('Location Stats')} style={[styles.stats3, styles.statsTypo]}>STATS</Text>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Material Stats')}>
+                <Image
+                    style={[styles.iconWheelBarrow, styles.iconLayout]}
+                    contentFit="cover"
+                    source={require("../assets/barrow.png")}
+                />
+            </TouchableWithoutFeedback>
             <View style={styles.chart}>
                 <View style={[styles.chart1, styles.chartPosition]}>
                     <View style={[styles.legend, styles.chartPosition]}>
                         <Image
                             style={[styles.maskIcon, styles.maskIconPosition]}
                             contentFit="cover"
-                            source={require("../assets/mask.png")}
+                            source={require("../assets/graph.png")}
                         />
-                        <View style={[styles.legend1, styles.text8Layout]}>
-                            <View style={[styles.info, styles.infoPosition1]}>
-                                <Text style={[styles.text3, styles.textLayout]}>Point One</Text>
-                                <View style={[styles.color, styles.textPosition]} />
-                            </View>
-                            <View style={[styles.info1, styles.infoPosition1]}>
-                                <Text style={[styles.text3, styles.textLayout]}>Point Two</Text>
-                                <View style={[styles.color, styles.textPosition]} />
-                            </View>
-                            <View style={[styles.info2, styles.infoPosition]}>
-                                <Text style={[styles.text3, styles.textLayout]}>
-                                    Point Three
-                                </Text>
-                                <View style={[styles.color, styles.textPosition]} />
-                            </View>
-                            <View style={[styles.info3, styles.infoPosition]}>
-                                <Text style={[styles.text3, styles.textLayout]}>
-                                    Point Four
-                                </Text>
-                                <View style={[styles.color, styles.textPosition]} />
-                            </View>
-                            <View style={[styles.line, styles.lineLayout]}>
-                                <View style={[styles.rectangle, styles.maskIconPosition]} />
-                            </View>
-                        </View>
+
                     </View>
                 </View>
                 <View style={[styles.chart2, styles.chartPosition]}>
@@ -132,7 +122,7 @@ const Stats = () => {
                         <Image
                             style={styles.shapeIcon}
                             contentFit="cover"
-                            source={require("../assets/shape.png")}
+                            source={require("../assets/chart.png")}
                         />
                         <View style={[styles.text7, styles.textPosition]}>
                             <Text style={[styles.text8, styles.textTypo]}>{`$23,994
@@ -142,24 +132,56 @@ const Stats = () => {
                     </View>
                 </View>
             </View>
-            <Image
-                style={[styles.iconWallet, styles.iconLayout]}
-                contentFit="cover"
-                source={`🦆 icon "wallet"_13`}
-            />
-            <Image
-                style={[styles.iconTruckDriver, styles.iconLayout]}
-                contentFit="cover"
-                source={`🦆 icon "Truck Driver"_14`}
-            />
-            <Image
-                style={[styles.iconAlternateMapMarker, styles.iconLayout]}
-                contentFit="cover"
-                source={`🦆 icon "Alternate Map Marker"_15`}
-            />
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Money Stats')}>
+                <Image
+                    style={[styles.iconWallet, styles.iconLayout]}
+                    contentFit="cover"
+                    source={require("../assets/wallet.png")}
+                /></TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Driver Stats')}>
+                <Image
+                    style={[styles.iconTruckDriver, styles.iconLayout]}
+                    contentFit="cover"
+                    source={require("../assets/driver.png")}
+                /></TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Location Stats')}>
+                <Image
+                    style={[styles.iconAlternateMapMarker, styles.iconLayout]}
+                    contentFit="cover"
+                    source={require("../assets/loc.png")}
+                /></TouchableWithoutFeedback>
         </View>
     );
 };
+
+
+
+const RootStack = createStackNavigator();
+
+function Stats() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={StatsMain} options={{ headerShown: false }} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="Material Stats" component={MatStats} />
+                    <RootStack.Screen name="Money Stats" component={MonStats} />
+                    <RootStack.Screen name="Driver Stats" component={DriStats} />
+                    <RootStack.Screen name="Location Stats" component={LocStats} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
     statsSectionLayout: {
@@ -341,7 +363,7 @@ const styles = StyleSheet.create({
         width: 11,
         height: 19,
         textAlign: "left",
-        left: 11,
+        left: 10,
         fontFamily: FontFamily.robotoBold,
         fontWeight: "700",
         color: Color.colorRoyalblue,
@@ -349,7 +371,7 @@ const styles = StyleSheet.create({
     },
     ellipseParent: {
         top: 44,
-        left: 307,
+        left: 330,
     },
     groupIcon: {
         height: "80%",
@@ -406,8 +428,8 @@ const styles = StyleSheet.create({
     frameInner: {
         top: 470,
         left: 26,
-        width: 309,
-        height: 192,
+        width: 327,
+        height: 250,
         position: "absolute",
     },
     rectangleView: {
@@ -434,7 +456,7 @@ const styles = StyleSheet.create({
         width: 304,
     },
     stasticsParent: {
-        width: 360,
+        width: 390,
         backgroundColor: "transparent",
         left: 0,
         top: 0,
@@ -466,9 +488,9 @@ const styles = StyleSheet.create({
         top: 400,
     },
     iconWheelBarrow: {
-        height: "3.5%",
-        width: "7.78%",
-        top: "38.88%",
+        height: 25,
+        width: 26,
+        top: "43%",
         right: "76.11%",
         bottom: "57.63%",
         left: "16.11%",
@@ -601,30 +623,30 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     iconWallet: {
-        height: "3.56%",
-        width: "8.61%",
-        top: "38.94%",
+        height: 25,
+        width: 26,
+        top: "43%",
         right: "30.69%",
         bottom: "57.5%",
-        left: "60.69%",
+        left: "56%",
         position: "absolute",
     },
     iconTruckDriver: {
-        height: "4.27%",
-        width: "6.39%",
-        top: "47.88%",
+        height: 28,
+        width: 26,
+        top: "53%",
         right: "77.78%",
         bottom: "47.86%",
         left: "15.83%",
         position: "absolute",
     },
     iconAlternateMapMarker: {
-        height: "3.63%",
-        width: "6.04%",
-        top: "48%",
-        right: "32.57%",
+        height: 33,
+        width: 26,
+        top: "53%",
+        right: "37%",
         bottom: "48.38%",
-        left: "61.39%",
+        //left: "46% ",
         position: "absolute",
     },
     statsSection: {
