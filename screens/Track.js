@@ -3,8 +3,13 @@ import { Image } from "expo-image";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Color, Border, FontSize, FontFamily } from "../GlobalStylesTrack";
+import TrackDetail from "./TrackDetail";
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+function TrackMain({ navigation }) {
 
-const Track = () => {
+
+
     const handleCardButtonClick = () => {
 
         alert('Button inside the card clicked!');
@@ -34,7 +39,7 @@ const Track = () => {
                     contentFit="cover"
                     source={require("../assets/vector-8.png")}
                 />
-                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.ellipseParent, styles.groupLayout]}>
+                <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.ellipseParent, styles.groupLayout]}>
                     <Image
                         style={[styles.groupChild, styles.groupPosition]}
                         contentFit="cover"
@@ -42,7 +47,7 @@ const Track = () => {
                     />
                     <Text style={styles.text}>1</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.ellipseGroup, styles.groupLayout]}>
+                <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.ellipseGroup, styles.groupLayout]}>
                     <Image
                         style={[styles.groupItem, styles.groupPosition]}
                         contentFit="cover"
@@ -50,7 +55,7 @@ const Track = () => {
                     />
                     <Text style={styles.text}>3</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.ellipseContainer, styles.groupLayout]}>
+                <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.ellipseContainer, styles.groupLayout]}>
                     <Image
                         style={[styles.groupChild, styles.groupPosition]}
                         contentFit="cover"
@@ -58,7 +63,7 @@ const Track = () => {
                     />
                     <Text style={styles.text}>2</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.groupView, styles.groupLayout]}>
+                <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.groupView, styles.groupLayout]}>
                     <Image
                         style={[styles.groupChild, styles.groupPosition]}
                         contentFit="cover"
@@ -66,7 +71,7 @@ const Track = () => {
                     />
                     <Text style={styles.text}>4</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleCardButtonClick} style={[styles.rectangleParent, styles.groupParentLayout]}>
+                <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.rectangleParent, styles.groupParentLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
                     <LinearGradient
                         style={[styles.rectangleLineargradient, styles.rectangleBorder]}
@@ -80,7 +85,7 @@ const Track = () => {
                         source={require("../assets/right.png")}
                     />
                 </TouchableOpacity>
-                <View style={[styles.rectangleGroup, styles.groupParentLayout]}>
+                <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.rectangleGroup, styles.groupParentLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
                     <LinearGradient
                         style={[styles.rectangleLineargradient, styles.rectangleBorder]}
@@ -93,7 +98,7 @@ const Track = () => {
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
-                </View>
+                </TouchableOpacity>
                 <Image
                     style={[styles.frameInner, styles.frameChildLayout]}
                     contentFit="cover"
@@ -121,7 +126,7 @@ Magadi Road, Bangalore- 23`}</Text>
                 style={[styles.no11348th1, styles.no11348thTypo]}
             >{`No. 11/34, 8th Cross, Manjunathnagar,
 Magadi Road, Bangalore- 23`}</Text>
-            <View style={[styles.groupParent, styles.groupParentLayout]}>
+            <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.groupParent, styles.groupParentLayout]}>
                 <View style={[styles.rectangleContainer, styles.groupParentLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
                     <LinearGradient
@@ -149,8 +154,8 @@ Magadi Road, Bangalore- 23`}</Text>
                     style={[styles.no11348th2, styles.no11348thTypo]}
                 >{`No. 11/34, 8th Cross, Manjunathnagar,
 Magadi Road, Bangalore- 23`}</Text>
-            </View>
-            <View style={[styles.groupContainer, styles.groupParentLayout]}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Track Detail')} style={[styles.groupContainer, styles.groupParentLayout]}>
                 <View style={[styles.rectangleContainer, styles.groupParentLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
                     <LinearGradient
@@ -178,7 +183,7 @@ Magadi Road, Bangalore- 23`}</Text>
                     style={[styles.no11348th2, styles.no11348thTypo]}
                 >{`No. 11/34, 8th Cross, Manjunathnagar,
 Magadi Road, Bangalore- 23`}</Text>
-            </View>
+            </TouchableOpacity>
             <Text style={[styles.deliveryPartner, styles.deliveryTypo]}>
                 DELIVERY PARTNER
             </Text>
@@ -193,7 +198,35 @@ Magadi Road, Bangalore- 23`}</Text>
             </Text>
         </View>
     );
+}
+
+
+
+
+const RootStack = createStackNavigator();
+
+function Track() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={TrackMain} options={{ headerShown: false }} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="Track Detail" component={TrackDetail} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
+    );
 };
+
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
     trackSectioonLayout: {
