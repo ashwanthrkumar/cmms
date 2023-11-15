@@ -2,7 +2,6 @@
 export const FontFamily = {
     robotoRegular: "Roboto-Regular",
     robotoBold: "Roboto-Bold",
-    robotoItalic: "Roboto-Italic",
 };
 /* font sizes */
 export const FontSize = {

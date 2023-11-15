@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     stastics: {
-        top: 51,
+        //top: 51,
         left: 16,
         fontSize: 18,
         textAlign: "center",
@@ -391,7 +391,7 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     rectangleParent: {
-        top: 54,
+        top: 4,
         left: 103,
         height: 15,
         width: 49,
@@ -400,9 +400,9 @@ const styles = StyleSheet.create({
     iconCog: {
         height: "2.63%",
         width: "5.83%",
-        top: "6.38%",
+        top: 6,
         right: "27.78%",
-        left: "66.39%",
+        left: "71%",
         maxHeight: "100%",
         maxWidth: "100%",
         bottom: "91%",
@@ -415,15 +415,15 @@ const styles = StyleSheet.create({
     },
     a: {
         top: 7,
-        fontSize: 20,
+        fontSize: 16,
         color: Color.colorRoyalblue,
         width: 11,
         height: 19,
         left: 11,
     },
     ellipseParent: {
-        top: 44,
-        left: 307,
+        top: 0,
+        left: 350,
     },
     groupIcon: {
         height: "80%",
@@ -448,9 +448,9 @@ const styles = StyleSheet.create({
     groupParent: {
         height: "3.13%",
         width: "5.28%",
-        top: "5.88%",
+        top: 3,
         right: "18.61%",
-        left: "76.11%",
+        left: "81%",
         bottom: "91%",
         position: "absolute",
     },
@@ -464,7 +464,7 @@ const styles = StyleSheet.create({
         left: 37,
     },
     stasticsParent: {
-        width: 360,
+        width: 392,
         backgroundColor: "transparent",
         left: 0,
         top: 0,
@@ -485,7 +485,7 @@ const styles = StyleSheet.create({
     },
     materialsParent: {
         top: 109,
-        left: 133,
+        left: 150,
         width: 94,
         height: 29,
         position: "absolute",
@@ -707,9 +707,11 @@ const styles = StyleSheet.create({
         fontFamily: FontFamily.interBold,
     },
     materialStats: {
-        backgroundColor: "#969696",
+        backgroundColor: "#add1f0",
         flex: 1,
         width: "100%",
+        //top: -45,
+
     },
 });
 
