@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableWithoutFeedback } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontFamily, Color, Border, FontSize } from "../GlobalStylesMS";
 import { createStackNavigator } from '@react-navigation/stack';
 import Profile from "./Profile";
 import { NavigationContainer } from '@react-navigation/native';
+import Settings from "./Settings";
 function MonMain({ navigation }) {
     return (
         <View style={[styles.moneyStats, styles.moneyLayout]}>
@@ -19,11 +20,12 @@ function MonMain({ navigation }) {
                     <View style={styles.groupChild} />
                     <Text style={styles.history}>HISTORY</Text>
                 </View>
-                <Image
-                    style={[styles.iconCog, styles.iconLayout2]}
-                    contentFit="cover"
-                    source={require("../assets/settings.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                    <Image
+                        style={[styles.iconCog, styles.iconLayout2]}
+                        contentFit="cover"
+                        source={require("../assets/settings.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={[styles.ellipseParent, styles.groupItemLayout]}>
                     <Image
                         style={[styles.groupItem, styles.groupItemLayout]}
@@ -302,6 +304,7 @@ function MonStats() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
                 </RootStack.Group>
 
             </RootStack.Navigator>

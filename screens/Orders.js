@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet, View, TouchableOpacity, Button } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, Button, TouchableWithoutFeedback } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Border, Color, FontSize, FontFamily, Padding } from "../GlobalStylesOrder";
@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Profile from "./Profile";
 import Createorder from "./Createaorder"
 import { NavigationContainer } from '@react-navigation/native';
+import Settings from "./Settings";
 
 
 
@@ -61,11 +62,12 @@ function OrdersMain({ navigation }) {
                     <View style={[styles.groupChild1, styles.groupLayout]} />
                     <Text style={[styles.piece, styles.kgTypo]}>10 / piece</Text>
                 </View>
-                <Image
-                    style={[styles.iconCog, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require("../assets/settings.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                    <Image
+                        style={[styles.iconCog, styles.iconLayout]}
+                        contentFit="cover"
+                        source={require("../assets/settings.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={[styles.lineView, styles.frameChildPosition]} />
                 <View style={[styles.frameChild1, styles.frameChildPosition]} />
                 <View style={[styles.frameChild2, styles.frameChildPosition]} />
@@ -146,6 +148,7 @@ function Orders() {
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="New Order Registration" component={Createorder} />
                     <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
                 </RootStack.Group>
 
             </RootStack.Navigator>

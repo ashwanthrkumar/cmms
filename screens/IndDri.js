@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Profile from "./Profile";
 import { NavigationContainer } from '@react-navigation/native';
 import DriStats from "./DriStats";
+import Settings from "./Settings";
 function IndDriMain({ navigation }) {
     return (
         <View style={[styles.individualStats1, styles.bgBg]}>
@@ -408,11 +409,12 @@ function IndDriMain({ navigation }) {
                 <View style={[styles.rectangleView, styles.rectangleLayout]} />
                 <Text style={[styles.history, styles.text10Typo]}>HISTORY</Text>
             </View>
-            <Image
-                style={[styles.iconCog, styles.iconCogPosition]}
-                contentFit="cover"
-                source={require("../assets/settings.png")}
-            />
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                <Image
+                    style={[styles.iconCog, styles.iconCogPosition]}
+                    contentFit="cover"
+                    source={require("../assets/settings.png")}
+                /></TouchableWithoutFeedback>
             <View style={[styles.ellipseParent, styles.ellipseLayout]}>
                 <Image
                     style={[styles.ellipseIcon, styles.ellipseLayout]}
@@ -459,6 +461,7 @@ function IndDri() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
                 </RootStack.Group>
 
             </RootStack.Navigator>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Pressable, StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { Pressable, StyleSheet, View, Text, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { FontFamily, Color, FontSize, Border } from "../GlobalStylesDS";
@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Profile from "./Profile";
 import IndDri from "./IndDri";
 import { NavigationContainer } from '@react-navigation/native';
+import Settings from "./Settings";
 function DriverMain({ navigation }) {
 
     return (
@@ -22,11 +23,12 @@ function DriverMain({ navigation }) {
                     <View style={styles.groupChild} />
                     <Text style={[styles.history, styles.driversTypo]}>HISTORY</Text>
                 </View>
-                <Image
-                    style={styles.iconCog}
-                    contentFit="cover"
-                    source={require("../assets/settings.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                    <Image
+                        style={styles.iconCog}
+                        contentFit="cover"
+                        source={require("../assets/settings.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={[styles.ellipseParent, styles.parentLayout]}>
                     <Image
                         style={[styles.groupItem, styles.parentLayout]}
@@ -243,6 +245,7 @@ function DriStats() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
                 </RootStack.Group>
                 <RootStack.Group>
                     <RootStack.Screen name="IndDri" component={IndDri} options={{ headerShown: false }} />

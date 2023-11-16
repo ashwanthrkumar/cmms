@@ -1,12 +1,12 @@
 //import liraries
 import { useNavigation } from '@react-navigation/core';
 import * as React from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback, Settings } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 import Profile from './Profile';
-
+import Setting from './Settings';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -202,6 +202,7 @@ function HomeScreen() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
+
                 </RootStack.Group>
 
             </RootStack.Navigator>

@@ -10,6 +10,7 @@ import LocStats from "./LocStats"
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Profile from "./Profile";
+import Settings from "./Settings";
 
 function StatsMain({ navigation }) {
     const handleCardButtonClick = () => {
@@ -29,11 +30,12 @@ function StatsMain({ navigation }) {
                     <View style={[styles.groupChild, styles.colorLayout]} />
                     <Text style={[styles.history, styles.textTypo2]}>HISTORY</Text>
                 </View>
-                <Image
-                    style={[styles.iconCog, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require("../assets/settings.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                    <Image
+                        style={[styles.iconCog, styles.iconLayout]}
+                        contentFit="cover"
+                        source={require("../assets/settings.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={[styles.ellipseParent, styles.groupItemLayout]}>
                     <Image
                         style={[styles.groupItem, styles.groupItemLayout]}
@@ -172,6 +174,7 @@ function Stats() {
                     <RootStack.Screen name="Driver Stats" component={DriStats} />
                     <RootStack.Screen name="Location Stats" component={LocStats} />
                     <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
                 </RootStack.Group>
 
             </RootStack.Navigator>

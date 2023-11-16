@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Color, FontFamily, Border, FontSize } from "../GlobalStylesPayments";
 import Profile from "./Profile";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Settings from "./Settings";
 function PayMain({ navigation }) {
     const [isCardVisible, setCardVisibility] = useState(false);
 
@@ -39,11 +40,12 @@ function PayMain({ navigation }) {
                 </Text>
                 <Text style={[styles.text, styles.textTypo]}>₹1,78,054</Text>
                 <Text style={styles.text1}>₹1,700</Text>
-                <Image
-                    style={[styles.iconCog, styles.iconLayout]}
-                    contentFit="cover"
-                    source={require("../assets/settings.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                    <Image
+                        style={[styles.iconCog, styles.iconLayout]}
+                        contentFit="cover"
+                        source={require("../assets/settings.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={styles.frameChild} />
                 <View style={[styles.frameItem, styles.groupViewLayout]} />
                 <LinearGradient
@@ -293,6 +295,7 @@ function Payments() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
                 </RootStack.Group>
 
             </RootStack.Navigator>
