@@ -1,10 +1,13 @@
 import * as React from "react";
-import { Pressable, StyleSheet, View, Text } from "react-native";
+import { Pressable, StyleSheet, View, Text, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 import { Color, Border, FontSize, FontFamily } from "../GlobalStylesID";
-
-const IndDri = () => {
+import { createStackNavigator } from '@react-navigation/stack';
+import Profile from "./Profile";
+import { NavigationContainer } from '@react-navigation/native';
+import DriStats from "./DriStats";
+function IndDriMain({ navigation }) {
     return (
         <View style={[styles.individualStats1, styles.bgBg]}>
             <LinearGradient
@@ -103,11 +106,12 @@ const IndDri = () => {
                     />
                     <Text style={[styles.text, styles.textTypo]}>#23923</Text>
                 </View>
-                <Image
-                    style={[styles.groupIcon, styles.iconGroupLayout]}
-                    contentFit="cover"
-                    source={require("../assets/upup.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Back')}>
+                    <Image
+                        style={[styles.groupIcon, styles.iconGroupLayout]}
+                        contentFit="cover"
+                        source={require("../assets/upup.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={styles.chart}>
                     <View style={[styles.bg, styles.iconPosition]} />
                     <View style={[styles.grid, styles.gridPosition]}>
@@ -387,18 +391,16 @@ const IndDri = () => {
                         contentFit="cover"
                         source={require("../assets/indchart.png")}
                     />
-                    <View style={[styles.bubble, styles.row29Position]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={[styles.bubble, styles.row29Position]}>
                         <View style={[styles.pointer, styles.iconPosition]}>
                             <Image
                                 style={[styles.bubbleIcon, styles.iconPosition]}
                                 contentFit="cover"
                                 source={require("../assets/up.png")}
                             />
-                            <Text style={[styles.text9, styles.row29Position]}>
-                                O 23.4 / H 42.3 / L 43.2 / C 85.6
-                            </Text>
+
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
             <Text style={[styles.drivers, styles.aTypo]}>DRIVERS</Text>
@@ -417,7 +419,7 @@ const IndDri = () => {
                     contentFit="cover"
                     source={require("../assets/ellipse-1.png")}
                 />
-                <Text style={[styles.a, styles.aPosition]}>A</Text>
+                <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.aPosition]}>A</Text>
             </View>
             <View style={[styles.groupParent, styles.iconCogPosition]}>
                 <Image
@@ -442,6 +444,25 @@ const IndDri = () => {
                 />
             </View>
         </View>
+    );
+};
+const RootStack = createStackNavigator();
+
+function IndDri() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={IndDriMain} options={{ headerShown: false }} />
+
+                    <RootStack.Screen name="Back" component={DriStats} options={{ headerShown: false }} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="Profile" component={Profile} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
     );
 };
 

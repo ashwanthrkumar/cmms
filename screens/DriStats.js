@@ -151,7 +151,7 @@ function DriverMain({ navigation }) {
                         colors={["#d9d9d9", "rgba(217, 217, 217, 0)"]}
                     />
                     <Text style={[styles.mohan, styles.mohanTypo]}>Mohan</Text>
-                    <View
+                    <TouchableOpacity onPress={() => navigation.navigate('IndDri')}
                         style={[styles.viewDetailsParent, styles.leftLabel7321Position]}
                     >
                         <Text style={[styles.viewDetails, styles.mohanTypo]}>
@@ -162,7 +162,7 @@ function DriverMain({ navigation }) {
                             contentFit="cover"
                             source={require("../assets/right.png")}
                         />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={[styles.groupView, styles.groupViewLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
@@ -172,7 +172,7 @@ function DriverMain({ navigation }) {
                         colors={["#d9d9d9", "rgba(217, 217, 217, 0)"]}
                     />
                     <Text style={[styles.anirudh, styles.mohanTypo]}>Anirudh</Text>
-                    <View
+                    <TouchableOpacity onPress={() => navigation.navigate('IndDri')}
                         style={[styles.viewDetailsParent, styles.leftLabel7321Position]}
                     >
                         <Text style={[styles.viewDetails, styles.mohanTypo]}>
@@ -183,7 +183,7 @@ function DriverMain({ navigation }) {
                             contentFit="cover"
                             source={require("../assets/right.png")}
                         />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={[styles.rectangleParent1, styles.groupViewLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
@@ -193,7 +193,7 @@ function DriverMain({ navigation }) {
                         colors={["#d9d9d9", "rgba(217, 217, 217, 0)"]}
                     />
                     <Text style={[styles.anirudh, styles.mohanTypo]}>Chiranth</Text>
-                    <View
+                    <TouchableOpacity onPress={() => navigation.navigate('IndDri')}
                         style={[styles.viewDetailsParent, styles.leftLabel7321Position]}
                     >
                         <Text style={[styles.viewDetails, styles.mohanTypo]}>
@@ -204,7 +204,7 @@ function DriverMain({ navigation }) {
                             contentFit="cover"
                             source={require("../assets/right.png")}
                         />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={[styles.rectangleParent2, styles.groupViewLayout]}>
                     <View style={[styles.rectangleView, styles.rectangleBorder]} />
@@ -214,7 +214,7 @@ function DriverMain({ navigation }) {
                         colors={["#d9d9d9", "rgba(217, 217, 217, 0)"]}
                     />
                     <Text style={[styles.dhanay, styles.mohanTypo]}>Dhanay</Text>
-                    <View
+                    <TouchableOpacity onPress={() => navigation.navigate('IndDri')}
                         style={[styles.viewDetailsParent, styles.leftLabel7321Position]}
                     >
                         <Text style={[styles.viewDetails, styles.mohanTypo]}>
@@ -225,7 +225,7 @@ function DriverMain({ navigation }) {
                             contentFit="cover"
                             source={require("../assets/right.png")}
                         />
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -243,6 +243,8 @@ function DriStats() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
+                </RootStack.Group>
+                <RootStack.Group>
                     <RootStack.Screen name="IndDri" component={IndDri} options={{ headerShown: false }} />
                 </RootStack.Group>
 
