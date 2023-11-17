@@ -1,10 +1,13 @@
 import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableWithoutFeedback } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontFamily, Color, Border, FontSize } from "../GlobalStyless1";
-
-const MatStats = () => {
+import { createStackNavigator } from '@react-navigation/stack';
+import Profile from "./Profile";
+import { NavigationContainer } from '@react-navigation/native';
+import Settings from "./Settings";
+function MatMain({ navigation }) {
     return (
         <View style={[styles.materialStats, styles.materialStatsLayout]}>
             <LinearGradient
@@ -17,18 +20,19 @@ const MatStats = () => {
                     <View style={styles.groupChild} />
                     <Text style={styles.history}>HISTORY</Text>
                 </View>
-                <Image
-                    style={styles.iconCog}
-                    contentFit="cover"
-                    source={require("../assets/settings.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+                    <Image
+                        style={styles.iconCog}
+                        contentFit="cover"
+                        source={require("../assets/settings.png")}
+                    /></TouchableWithoutFeedback>
                 <View style={[styles.ellipseParent, styles.groupItemLayout]}>
                     <Image
                         style={[styles.groupItem, styles.groupItemLayout]}
                         contentFit="cover"
                         source={require("../assets/ellipse-1.png")}
                     />
-                    <Text style={[styles.a, styles.aTypo]}>A</Text>
+                    <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.aTypo]}>A</Text>
                 </View>
                 <View style={styles.groupParent}>
                     <Image
@@ -201,6 +205,25 @@ const MatStats = () => {
                 TOP SELLING MATERIALS
             </Text>
         </View>
+    );
+};
+
+const RootStack = createStackNavigator();
+
+function MatStats() {
+    return (
+        <NavigationContainer independent={true}>
+            <RootStack.Navigator>
+                <RootStack.Group>
+                    <RootStack.Screen name="Home" component={MatMain} options={{ headerShown: false }} />
+                </RootStack.Group>
+                <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+                    <RootStack.Screen name="Profile" component={Profile} />
+                    <RootStack.Screen name="Settings" component={Settings} />
+                </RootStack.Group>
+
+            </RootStack.Navigator>
+        </NavigationContainer>
     );
 };
 

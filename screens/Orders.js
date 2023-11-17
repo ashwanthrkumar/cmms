@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
     },
     detailsTypo1: {
         color: Color.colorDarkgray_200,
-        textDecoration: "underline",
+        //textDecoration: "underline",
         fontSize: FontSize.size_2xs,
         left: 298,
         textAlign: "center",
@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     detailsTypo: {
         left: 297,
         color: Color.colorDarkgray_200,
-        textDecoration: "underline",
+        //textDecoration: "underline",
         fontSize: FontSize.size_2xs,
         textAlign: "center",
         fontFamily: FontFamily.robotoBold,
