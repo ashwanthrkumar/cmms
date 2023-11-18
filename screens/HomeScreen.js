@@ -4,7 +4,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback, Settings } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
-import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import { Color, FontFamily, FontSize, Border } from "../styling/GlobalStyles";
 import Profile from './Profile';
 import Setting from './Settings';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -40,12 +40,12 @@ function HomeMain({ navigation }) {
                     source={require("../assets/ellipse-1.png")}
                 />
                 <Text onPress={() => navigation.navigate('Profile')} style={[styles.a, styles.issueTypoa]}>A</Text>
-
-                <Image
-                    style={[styles.groupIcon, styles.iconLayoutnotify]}
-                    contentFit="cover"
-                    source={require("../assets/group.png")}
-                />
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('sa')}>
+                    <Image
+                        style={[styles.groupIcon, styles.iconLayoutnotify]}
+                        contentFit="cover"
+                        source={require("../assets/group.png")}
+                    /></TouchableWithoutFeedback>
 
                 <Image
                     style={styles.frameItemnotify}
@@ -202,7 +202,6 @@ function HomeScreen() {
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="Profile" component={Profile} />
-
                 </RootStack.Group>
 
             </RootStack.Navigator>

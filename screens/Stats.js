@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, StyleSheet, View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Color, FontFamily, FontSize } from "../GlobalStylesS";
+import { Color, FontFamily, FontSize } from "../styling/GlobalStylesS";
 import MatStats from "./MatStats"
 import MonStats from "./MonStats"
 import DriStats from "./DriStats"

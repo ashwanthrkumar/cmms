@@ -2,7 +2,7 @@ import * as React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Color, Border, FontFamily, FontSize, Padding } from "../GlobalStylesTD";
+import { Color, Border, FontFamily, FontSize, Padding } from "../styling/GlobalStylesTD";
 
 const TrackDetail = () => {
     const buttonclicked = () => {

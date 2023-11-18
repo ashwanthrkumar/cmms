@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, StyleSheet, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
-import { Color, Border, FontFamily, FontSize, Padding } from "../GlobalStylesNewOrder";
+import { Color, Border, FontFamily, FontSize, Padding } from "../styling/GlobalStylesNewOrder";
 
 const Createorder = () => {
     return (

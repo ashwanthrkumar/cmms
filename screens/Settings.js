@@ -2,7 +2,7 @@ import * as React from "react";
 import { Pressable, StyleSheet, View, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
-import { Color, Border, FontFamily, FontSize } from "../GlobalStylesSettings";
+import { Color, Border, FontFamily, FontSize } from "../styling/GlobalStylesSettings";
 
 const Settings = () => {
     return (

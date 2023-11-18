@@ -2,7 +2,7 @@ import * as React from "react";
 import { Image } from "expo-image";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Color, Border, FontSize, FontFamily } from "../GlobalStylesTrack";
+import { Color, Border, FontSize, FontFamily } from "../styling/GlobalStylesTrack";
 import TrackDetail from "./TrackDetail";
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
