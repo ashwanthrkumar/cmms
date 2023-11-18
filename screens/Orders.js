@@ -12,11 +12,6 @@ import Settings from "./Settings";
 
 
 
-
-
-
-
-
 function OrdersMain({ navigation }) {
 
 
