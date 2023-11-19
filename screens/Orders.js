@@ -66,10 +66,10 @@ function OrdersMain({ navigation }) {
                 <View style={[styles.lineView, styles.frameChildPosition]} />
                 <View style={[styles.frameChild1, styles.frameChildPosition]} />
                 <View style={[styles.frameChild2, styles.frameChildPosition]} />
-                <Text style={[styles.text3, styles.textTypo2]}>#45638</Text>
-                <Text style={[styles.text4, styles.textTypo2]}>#5638</Text>
-                <Text style={[styles.text5, styles.textTypo2]}>#438</Text>
-                <Text style={[styles.text6, styles.textTypo2]}>#7846</Text>
+                <Text style={[styles.text3, styles.textTypo2]}>#45638 | Ashwanth</Text>
+                <Text style={[styles.text4, styles.textTypo2]}>#5638 | Karthik</Text>
+                <Text style={[styles.text5, styles.textTypo2]}>#438 | Umesh</Text>
+                <Text style={[styles.text6, styles.textTypo2]}>#7846 | Rahul</Text>
                 <Text style={[styles.details, styles.detailsTypo1]}>{`Details >`}</Text>
                 <Text style={[styles.details1, styles.detailsTypo]}>{`Details >`}</Text>
                 <Text style={[styles.details2, styles.detailsTypo]}>{`Details >`}</Text>
