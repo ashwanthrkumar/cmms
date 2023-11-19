@@ -9,6 +9,7 @@ import Profile from "./Profile";
 import Createorder from "./Createaorder"
 import { NavigationContainer } from '@react-navigation/native';
 import Settings from "./Settings";
+import DetailOrder from "./DetailOrder";
 
 
 
@@ -70,10 +71,10 @@ function OrdersMain({ navigation }) {
                 <Text style={[styles.text4, styles.textTypo2]}>#5638 | Karthik</Text>
                 <Text style={[styles.text5, styles.textTypo2]}>#438 | Umesh</Text>
                 <Text style={[styles.text6, styles.textTypo2]}>#7846 | Rahul</Text>
-                <Text style={[styles.details, styles.detailsTypo1]}>{`Details >`}</Text>
-                <Text style={[styles.details1, styles.detailsTypo]}>{`Details >`}</Text>
-                <Text style={[styles.details2, styles.detailsTypo]}>{`Details >`}</Text>
-                <Text
+                <Text onPress={() => navigation.navigate('DetailOrder')} style={[styles.details, styles.detailsTypo1]}>{`Details >`}</Text>
+                <Text onPress={() => navigation.navigate('DetailOrder')} style={[styles.details1, styles.detailsTypo]}>{`Details >`}</Text>
+                <Text onPress={() => navigation.navigate('DetailOrder')} style={[styles.details2, styles.detailsTypo]}>{`Details >`}</Text>
+                <Text onPress={() => navigation.navigate('DetailOrder')}
                     style={[styles.details3, styles.detailsTypo1]}
                 >{`Details >`}</Text>
                 <Text style={[styles.cement, styles.steelTypo]}>Cement</Text>
@@ -122,13 +123,7 @@ function OrdersMain({ navigation }) {
 
 }
 
-function DetailsScreen() {
-    return (
-        <View>
-            <Text>Details</Text>
-        </View>
-    );
-}
+
 
 const RootStack = createStackNavigator();
 
@@ -138,12 +133,12 @@ function Orders() {
             <RootStack.Navigator>
                 <RootStack.Group>
                     <RootStack.Screen name="Home" component={OrdersMain} options={{ headerShown: false }} />
-                    <RootStack.Screen name="Details" component={DetailsScreen} />
                 </RootStack.Group>
                 <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                     <RootStack.Screen name="New Order Registration" component={Createorder} />
                     <RootStack.Screen name="Profile" component={Profile} />
                     <RootStack.Screen name="Settings" component={Settings} />
+                    <RootStack.Screen name="DetailOrder" component={DetailOrder} />
                 </RootStack.Group>
 
             </RootStack.Navigator>
