@@ -24,7 +24,7 @@ const AssignPartner = () => {
                     <Text style={[styles.assign, styles.assignTypo]}>ASSIGN</Text>
                     <Text style={[styles.busy, styles.assignTypo]}>BUSY</Text>
                     <Image
-                        style={styles.iconAngleDoubleRight}
+                        style={styles.iconAngleDoubleRight1}
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
@@ -42,7 +42,7 @@ const AssignPartner = () => {
                     <Text style={[styles.assign, styles.assignTypo]}>ASSIGN</Text>
                     <Text style={[styles.busy, styles.assignTypo]}>BUSY</Text>
                     <Image
-                        style={styles.iconAngleDoubleRight}
+                        style={styles.iconAngleDoubleRight1}
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
@@ -60,7 +60,7 @@ const AssignPartner = () => {
                     <Text style={[styles.assign, styles.assignTypo]}>ASSIGN</Text>
                     <Text style={[styles.busy, styles.assignTypo]}>BUSY</Text>
                     <Image
-                        style={styles.iconAngleDoubleRight}
+                        style={styles.iconAngleDoubleRight1}
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
@@ -78,7 +78,7 @@ const AssignPartner = () => {
                     <Text style={[styles.assign, styles.assignTypo]}>ASSIGN</Text>
                     <Text style={[styles.busy, styles.assignTypo]}>BUSY</Text>
                     <Image
-                        style={styles.iconAngleDoubleRight}
+                        style={styles.iconAngleDoubleRight1}
                         contentFit="cover"
                         source={require("../assets/right.png")}
                     />
@@ -311,6 +311,20 @@ const styles = StyleSheet.create({
         maxWidth: "100%",
         position: "absolute",
         overflow: "hidden",
+
+    },
+    iconAngleDoubleRight1: {
+        height: "23.31%",
+        width: "3.75%",
+        top: "19.35%",
+        right: "18.33%",
+        bottom: "57.33%",
+        left: "77.92%",
+        maxHeight: "100%",
+        maxWidth: "100%",
+        position: "absolute",
+        overflow: "hidden",
+        opacity: 0.3,
     },
     assignParent: {
         top: 21,
